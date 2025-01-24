@@ -4,16 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
 public class ExpenseAdapter extends ArrayAdapter<Expense> {
+
     public ExpenseAdapter(Context context, ArrayList<Expense> expenses) {
         super(context, 0, expenses);
     }
@@ -32,11 +32,13 @@ public class ExpenseAdapter extends ArrayAdapter<Expense> {
         TextView descriptionView = convertView.findViewById(R.id.expense_description);
         TextView categoryView = convertView.findViewById(R.id.expense_category);
         TextView amountView = convertView.findViewById(R.id.expense_amount);
+        TextView timestampView = convertView.findViewById(R.id.expense_timestamp);
 
         if (expense != null) {
             descriptionView.setText(expense.getDescription());
             categoryView.setText(expense.getCategory());
             amountView.setText(String.format("$%.2f", expense.getAmount()));
+            timestampView.setText(expense.getTimestamp());
         }
 
         return convertView;
