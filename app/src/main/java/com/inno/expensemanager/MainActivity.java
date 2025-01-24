@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ExpenseDatabaseHelper dbHelper;
     private ExpenseAdapter adapter;
-    private ArrayList<Expense> expenseList;
+    public static ArrayList<Expense> expenseList;
     private TextView totalExpenses;
 
     @Override
